@@ -1,0 +1,18 @@
+<h1>Meetups</h1>
+
+<h2>
+  <% if @error != nil %>
+    <%= @error %>
+  <% end %>
+</h2>
+
+
+<ul>
+  <% @meetups.each_with_index do |meetup, index| %>
+    <li>
+      <%= index + 1 %>. <a href="/meetups/<%= meetup.id %>"><%= meetup.name %></a>
+    </li>
+  <% end %>
+</ul>
+
+<h3><a href="/meetups/new">Create a New Meetup</a></h3>
